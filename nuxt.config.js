@@ -29,8 +29,13 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxt/content',
+    '@nuxtjs/robots',
     '@nuxtjs/sitemap' // Always declare last
   ],
+  robots: {
+    UserAgent: '*',
+    Allow: '/'
+  },
   sitemap: {
     hostname: 'https://jackdomleo.dev',
     exclude: ['/_icons']
