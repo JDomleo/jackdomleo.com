@@ -30,6 +30,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxt/content',
     '@nuxtjs/robots',
+    '@nuxtjs/svg-sprite',
     '@nuxtjs/sitemap' // Always declare last
   ],
   robots: {

@@ -27,6 +27,7 @@
     "@nuxtjs/pwa": "^3.3.4",
     "@nuxtjs/robots": "^2.4.2",
     "@nuxtjs/sitemap": "^2.4.0",
+    "@nuxtjs/svg-sprite": "^0.5.2",
     "core-js": "^3.8.2",
     "nuxt": "^2.14.12"
   },

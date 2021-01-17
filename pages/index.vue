@@ -5,6 +5,7 @@
       <h1 class="title">
         jackdomleo.dev
       </h1>
+      <svg-icon name="github" title="GitHub" desc="Octocat" />
       <div class="links">
         <a
           href="https://nuxtjs.org/"
