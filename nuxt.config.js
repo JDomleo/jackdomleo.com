@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 export default {
   target: 'static',
 
@@ -24,7 +26,12 @@ export default {
   components: true,
   buildModules: [
     '@nuxt/typescript-build',
+    '@nuxtjs/dotenv',
+    '@nuxtjs/google-analytics',
   ],
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID
+  },
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
@@ -38,7 +45,7 @@ export default {
     Allow: '/'
   },
   sitemap: {
-    hostname: 'https://jackdomleo.dev',
+    hostname: process.env.BASE_URL,
     exclude: ['/_icons']
   },
 
