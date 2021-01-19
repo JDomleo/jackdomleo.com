@@ -30,9 +30,15 @@ export default {
     '@nuxt/typescript-build',
     '@nuxtjs/dotenv',
     '@nuxtjs/google-analytics',
+    '@nuxtjs/google-fonts'
   ],
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID
+  },
+  googleFonts: {
+    families: {
+      'Roboto+Mono': true,
+    }
   },
   modules: [
     '@nuxtjs/axios',
