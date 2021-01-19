@@ -30,6 +30,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/svg-sprite": "^0.5.2",
     "core-js": "^3.8.2",
+    "modern-normalize": "^1.0.0",
     "nuxt": "^2.14.12"
   },
   "devDependencies": {
