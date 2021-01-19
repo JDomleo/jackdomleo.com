@@ -15,6 +15,13 @@
   </svg>
 </template>
 
+<script lang="ts">
+import { Vue, Component } from 'nuxt-property-decorator';
+
+@Component
+export default class Logo extends Vue {}
+</script>
+
 <style>
 .NuxtLogo {
   animation: 1s appear;
