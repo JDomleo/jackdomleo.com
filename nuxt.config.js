@@ -39,6 +39,7 @@ export default {
     '@nuxt/content',
     '@nuxtjs/robots',
     '@nuxtjs/svg-sprite',
+    '@nuxt/image',
     '@luxdamore/nuxt-prune-html',
     '@nuxtjs/sitemap' // Always declare last
   ],

@@ -33,6 +33,7 @@
     "nuxt": "^2.14.12"
   },
   "devDependencies": {
+    "@nuxt/image": "0.0.4",
     "@nuxt/types": "^2.14.12",
     "@nuxt/typescript-build": "^2.0.4",
     "@nuxtjs/dotenv": "^1.4.1",
