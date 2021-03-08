@@ -1,11 +1,11 @@
 ::selection {
   text-shadow: none;
   color: #fff;
-  background-color: var(--base-orange, currentColor);
+  background-color: var(--base-orange);
 }
 
 html {
-  font-family: monospace;
+  font-family: sans-serif;
   box-sizing: border-box;
 }
 
@@ -16,7 +16,9 @@ html {
 }
 
 body {
-  font-family: 'Roboto Mono', 'Courier New', monospace;
+  background-color: var(--body-bg);
+  color: var(--base-grey);
+  font-family: var(--font-sans-serif);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

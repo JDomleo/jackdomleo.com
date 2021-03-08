@@ -1,77 +1,56 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        jackdomleo.dev
-      </h1>
-      <svg-icon name="github" title="GitHub" desc="Octocat" />
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <PageTemplate page-heading="Hey, I'm Jack Domleo!">
+    <div slot="jumbo" class="home">
+      <div>
+        <p>A mid-level <strong>Frontend Developer</strong> from Nottingham, UK, working primarily with Vue.js, TypeScript, HTML and SCSS.</p>
+        <img src="https://jackdomleo.dev/_nuxt/img/bio-image-jack-domleo.400e227.jpg" alt="Jack Domleo" height="180" width="180" loading="lazy" />
       </div>
     </div>
-  </div>
+  </PageTemplate>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator';
 
-@Component
+@Component({
+  head () {
+    return {
+      title: 'Home'
+    };
+  }
+})
 export default class Index extends Vue {}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style lang="scss" scoped>
+@keyframes blobby {
+  0%, 100% {
+    border-radius: 75% 75% 81% 71% / 75% 75% 81% 71%;
+  }
+  33% {
+    border-radius: 43% 53% 49% 36% / 43% 53% 49% 36%;
+  }
+  66% {
+    border-radius: 64% 51% 49% 62% / 64% 51% 49% 62%;
+  }
 }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+.home {
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+  img {
+    border-radius: 75% 75% 81% 71% / 75% 75% 81% 71%;
+    border: 2px solid #000;
+    transition: ease-in-out ;
 
-.links {
-  padding-top: 15px;
+    &:hover {
+      animation: blobby 3s infinite;
+    }
+  }
 }
 </style>

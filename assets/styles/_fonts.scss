@@ -1,0 +1,7 @@
+$font-cursive: 'Rock Salt', cursive !default;
+$font-sans-serif: 'Open Sans', cursive !default;
+
+:root {
+  --font-cursive: #{$font-cursive};
+  --font-sans-serif: #{$font-sans-serif};
+}
