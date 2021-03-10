@@ -39,6 +39,7 @@ export default class PageTemplate extends Vue {
 <style lang="scss" scoped>
 h1 {
   font-size: 1.6rem;
+  line-height: 1.6;
 
   @media (min-width: 26em) {
     font-size: 2rem;
