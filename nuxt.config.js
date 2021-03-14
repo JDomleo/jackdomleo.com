@@ -29,17 +29,10 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/dotenv',
-    '@nuxtjs/google-analytics',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-analytics'
   ],
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID
-  },
-  googleFonts: {
-    families: {
-      'Rock+Salt': true,
-      'Open+Sans': true
-    }
   },
   modules: [
     '@nuxtjs/axios',

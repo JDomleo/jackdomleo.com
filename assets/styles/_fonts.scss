@@ -1,3 +1,22 @@
+@font-face {
+  font-family: "Rock Salt";
+  src: local("Rock Salt"), url(~assets/fonts/RockSalt-Regular.ttf) format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans"), url(~assets/fonts/OpenSans-Regular.ttf) format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans"), url(~assets/fonts/OpenSans-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
 $font-cursive: 'Rock Salt', cursive !default;
 $font-sans-serif: 'Open Sans', cursive !default;
 
