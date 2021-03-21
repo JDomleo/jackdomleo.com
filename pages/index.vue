@@ -1,9 +1,9 @@
 <template>
-  <PageTemplate page-heading="Hey, I'm Jack Domleo!">
+  <PageTemplate :page-heading="header.title">
     <div slot="jumbo" class="home">
       <div>
-        <p>A mid-level <strong>Frontend Developer</strong> from Nottingham, UK, working primarily with Vue.js, TypeScript, HTML and SCSS.</p>
-        <img src="https://jackdomleo.dev/_nuxt/img/bio-image-jack-domleo.400e227.jpg" alt="Jack Domleo" height="180" width="180" loading="lazy" />
+        <div v-html="$storyapi.richTextResolver.render(header.headline)"></div>
+        <img :src="header.avatar.filename" :alt="header.avatar.alt" height="180" width="180" loading="lazy" />
       </div>
     </div>
   </PageTemplate>
@@ -11,6 +11,7 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator';
+import 'storyblok-js-client/dist/index';
 
 @Component({
   head () {
@@ -19,7 +20,46 @@ import { Vue, Component } from 'nuxt-property-decorator';
     };
   }
 })
-export default class Index extends Vue {}
+export default class Index extends Vue {
+  private story!: Record<string, any>;
+
+  private mounted (): void {
+    // @ts-ignore
+    this.$storybridge.on(['input', 'published', 'change'], (event: StoryblokEventPayload) => {
+      if (event.action == 'input') {
+        if (event.story.id === this.story.id) {
+          this.story.content = event.story.content
+        }
+      } else {
+        window.location.reload()
+      }
+    })
+
+    console.log(this.story.content);
+  }
+
+  asyncData (context: any): void {
+    return context.app.$storyapi.get('cdn/stories/home', {
+      version: 'published'
+    }).then((res: any) => {
+      return res.data
+    }).catch((res: any) => {
+      if (!res.response) {
+        console.error(res)
+        context.error({ statusCode: 404, message: 'Failed to receive content form api' })
+      } else {
+        console.error(res.response.data)
+        context.error({ statusCode: res.response.status, message: res.response.data })
+      }
+    })
+  }
+
+  // StoryBlok blocks
+
+  private get header(): Record<string, any> {
+    return this.story.content.body.find((item: Record<string, any>) => item.component === 'header');
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -46,6 +86,8 @@ export default class Index extends Vue {}
   img {
     border-radius: 75% 75% 81% 71% / 75% 75% 81% 71%;
     border: 2px solid #000;
+    height: 11.25rem;
+    width: 11.25rem;
     transition: ease-in-out ;
 
     &:hover {

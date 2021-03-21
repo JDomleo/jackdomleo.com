@@ -37,6 +37,10 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    ['storyblok-nuxt', {
+      accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
+      cacheProvider: 'memory'
+    }],
     '@nuxt/content',
     '@nuxtjs/robots',
     '@nuxtjs/svg-sprite',
