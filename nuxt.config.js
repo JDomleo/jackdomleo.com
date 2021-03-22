@@ -29,18 +29,21 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/dotenv',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/prismic'
   ],
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID
   },
+  prismic: {
+    endpoint: 'https://jackdomleo-dev.cdn.prismic.io/api/v2',
+    apiOptions: {
+      accessToken: process.env.PRISMIC_ACCESS_TOKEN
+    }
+  },
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    ['storyblok-nuxt', {
-      accessToken: process.env.STORYBLOK_ACCESS_TOKEN,
-      cacheProvider: 'memory'
-    }],
     '@nuxt/content',
     '@nuxtjs/robots',
     '@nuxtjs/svg-sprite',

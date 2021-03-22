@@ -1,9 +1,10 @@
 <template>
-  <PageTemplate :page-heading="header.title">
+  <p v-if="$fetchState.pending">Fetching data</p>
+  <PageTemplate v-else :page-heading="home.data.page_title[0].text">
     <div slot="jumbo" class="home">
       <div>
-        <div v-html="$storyapi.richTextResolver.render(header.headline)"></div>
-        <img :src="header.avatar.filename" :alt="header.avatar.alt" height="180" width="180" loading="lazy" />
+        <prismic-rich-text :field="home.data.page_subtext" />
+        <prismic-image :field="home.data.avatar" loading="lazy" height="180" width="180" />
       </div>
     </div>
   </PageTemplate>
@@ -11,7 +12,6 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator';
-import 'storyblok-js-client/dist/index';
 
 @Component({
   head () {
@@ -21,43 +21,15 @@ import 'storyblok-js-client/dist/index';
   }
 })
 export default class Index extends Vue {
-  private story!: Record<string, any>;
+  private home!: Record<string, any>;
 
-  private mounted (): void {
-    // @ts-ignore
-    this.$storybridge.on(['input', 'published', 'change'], (event: StoryblokEventPayload) => {
-      if (event.action == 'input') {
-        if (event.story.id === this.story.id) {
-          this.story.content = event.story.content
-        }
-      } else {
-        window.location.reload()
-      }
-    })
-
-    console.log(this.story.content);
-  }
-
-  asyncData (context: any): void {
-    return context.app.$storyapi.get('cdn/stories/home', {
-      version: 'published'
-    }).then((res: any) => {
-      return res.data
-    }).catch((res: any) => {
-      if (!res.response) {
-        console.error(res)
-        context.error({ statusCode: 404, message: 'Failed to receive content form api' })
-      } else {
-        console.error(res.response.data)
-        context.error({ statusCode: res.response.status, message: res.response.data })
-      }
-    })
-  }
-
-  // StoryBlok blocks
-
-  private get header(): Record<string, any> {
-    return this.story.content.body.find((item: Record<string, any>) => item.component === 'header');
+  async fetch() {
+    try {
+      this.home = await this.$prismic.api.getSingle('home');
+    }
+    catch(e) {
+      console.error(e);
+    }
   }
 }
 </script>
