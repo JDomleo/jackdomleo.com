@@ -1,6 +1,5 @@
 <template>
-  <p v-if="$fetchState.pending">Fetching data</p>
-  <PageTemplate v-else :page-heading="home.data.page_title[0].text">
+  <PageTemplate :page-heading="home.data.page_title[0].text">
     <div slot="jumbo" class="home">
       <div>
         <prismic-rich-text :field="home.data.page_subtext" />
@@ -21,14 +20,13 @@ import { Vue, Component } from 'nuxt-property-decorator';
   }
 })
 export default class Index extends Vue {
-  private home!: Record<string, any>;
+  private async asyncData({ $prismic, error }: any) {
+    const home = await $prismic.api.getSingle('home')
 
-  async fetch() {
-    try {
-      this.home = await this.$prismic.api.getSingle('home');
-    }
-    catch(e) {
-      console.error(e);
+    if (home) {
+      return { home }
+    } else {
+      error({ statusCode: 404, message: 'Page not found' })
     }
   }
 }
