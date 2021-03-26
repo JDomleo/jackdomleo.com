@@ -1,5 +1,5 @@
 <template>
-  <PageTemplate :page-heading="home.data.page_title[0].text">
+  <PageTemplate :page-heading="$prismic.asText(home.data.page_title)">
     <div slot="jumbo" class="home">
       <div>
         <prismic-rich-text :field="home.data.page_subtext" />
