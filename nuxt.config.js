@@ -19,6 +19,7 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     'modern-normalize/modern-normalize.css',
+    'node_modules/cooltipz-css/src/cooltipz',
     '@/assets/styles/main.scss'
   ],
 
