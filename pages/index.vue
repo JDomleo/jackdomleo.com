@@ -1,5 +1,5 @@
 <template>
-  <PageTemplate :page-heading="$prismic.asText(home.data.page_title)">
+  <PageTemplate :page-heading="$prismic.asText(home.data.page_title)" :footer="footer">
     <div slot="jumbo" class="home">
       <div>
         <prismic-rich-text :field="home.data.page_subtext" />
@@ -22,9 +22,10 @@ import { Vue, Component } from 'nuxt-property-decorator';
 export default class Index extends Vue {
   private async asyncData({ $prismic, error }: any) {
     const home = await $prismic.api.getSingle('home')
+    const footer = await $prismic.api.getSingle('footer')
 
     if (home) {
-      return { home }
+      return { home, footer }
     } else {
       error({ statusCode: 404, message: 'Page not found' })
     }

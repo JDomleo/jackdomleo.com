@@ -1,5 +1,5 @@
 <template>
-  <PageTemplate page-heading="Projects">
+  <PageTemplate page-heading="Projects" :footer="footer">
   </PageTemplate>
 </template>
 
@@ -13,7 +13,17 @@ import { Vue, Component } from 'nuxt-property-decorator';
     };
   }
 })
-export default class Index extends Vue {}
+export default class Projects extends Vue {
+  async asyncData({ $prismic, error }: any) {
+    const footer = await $prismic.api.getSingle('footer')
+
+    if (footer) {
+      return { footer }
+    } else {
+      error({ statusCode: 404, message: 'Page not found' })
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

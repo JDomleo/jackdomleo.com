@@ -15,6 +15,7 @@
       </section>
       <slot />
     </main>
+    <PageFooter :footer="footer" />
   </div>
 </template>
 
@@ -23,6 +24,12 @@ import { Component, Prop, Vue } from 'nuxt-property-decorator';
 
 @Component
 export default class PageTemplate extends Vue {
+  @Prop({
+    type: Object,
+    required: true
+  })
+  private readonly footer!: any;
+
   @Prop({
     type: String,
     required: true
@@ -48,7 +55,7 @@ h1 {
 
 .jumbo {
   background: var(--base-orange);
-  background: linear-gradient(140deg, var(--alt-orange) 0%, var(--base-orange) 100%);
+  background: var(--orange-gradient);
   display: grid;
   place-items: center;
   width: 100vw;
@@ -76,7 +83,7 @@ h1 {
 
 .wave {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 100%;
     overflow: hidden;
