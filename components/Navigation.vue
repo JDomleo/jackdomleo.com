@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <div class="banner">
     <nav class="nav">
       <ul>
         <li v-for="(navItem, index) in navList" :key="navItem.url" :aria-setsize="navList.length" :aria-posinset="index + 1">
@@ -10,7 +10,7 @@
         </li>
       </ul>
     </nav>
-  </header>
+  </div>
 </template>
 
 <script lang="ts">
@@ -56,7 +56,7 @@ export default class Navigation extends Vue {
 <style lang="scss" scoped>
 $mobile-break: 26em;
 
-.header {
+.banner {
   position: fixed;
   bottom: 0;
   width: 100%;
