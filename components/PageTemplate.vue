@@ -3,6 +3,7 @@
     <Navigation />
     <main>
       <section class="jumbo" :class="{'jumbo--home': isHome()}">
+        <div id="particles"></div>
         <div>
           <h1 class="jumbo__heading">{{ pageHeading }}</h1>
           <slot name="jumbo" />
@@ -21,6 +22,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator';
+import { tsParticles } from "tsparticles";
 
 @Component
 export default class PageTemplate extends Vue {
@@ -35,6 +37,12 @@ export default class PageTemplate extends Vue {
     required: true
   })
   private readonly pageHeading!: string;
+
+  private mounted(): void {
+    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      tsParticles.load("particles", require('../assets/particles/triangles.json'));
+    }
+  }
 
   private isHome(): boolean {
     console.log(this.$route.path);
@@ -67,6 +75,10 @@ h1 {
     padding-top: 3rem;
   }
 
+  > div {
+    z-index: 1;
+  }
+
   &--home {
     height: calc(100vh - 4rem);
 
@@ -89,6 +101,7 @@ h1 {
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
+    z-index: 1;
 
     svg {
       position: relative;
@@ -104,5 +117,12 @@ h1 {
   &__fill {
     fill: var(--body-bg);
   }
+}
+
+#particles {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
 }
 </style>

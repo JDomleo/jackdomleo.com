@@ -31,7 +31,9 @@
     "cooltipz-css": "^1.6.7",
     "core-js": "^3.9.1",
     "modern-normalize": "^1.0.0",
-    "nuxt": "^2.15.3"
+    "nuxt": "^2.15.3",
+    "particles.vue": "^2.7.2",
+    "tsparticles": "^1.24.2"
   },
   "devDependencies": {
     "@nuxt/image": "^0.4.1",
