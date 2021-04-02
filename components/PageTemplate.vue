@@ -85,7 +85,7 @@ h1 {
     height: calc(100vh - 4rem);
 
     @media (min-width: 26em) {
-      height: 100vh;
+      height: 80vh;
     }
   }
 

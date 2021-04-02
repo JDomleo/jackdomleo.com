@@ -54,18 +54,19 @@ export default class Navigation extends Vue {
 </script>
 
 <style lang="scss" scoped>
-$mobile-break: 26em;
+$mobile-break: 32em;
 
 .banner {
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   background-color: var(--base-white);
 
   @media (min-width: $mobile-break) {
     position: absolute;
-    top: 0;
+    top: 1rem;
+    left: 1rem;
     bottom: unset;
     width: auto;
     background-color: transparent;
