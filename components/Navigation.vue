@@ -3,12 +3,7 @@
     <nav class="nav">
       <ul>
         <li v-for="(navItem, index) in navList" :key="navItem.url" :aria-setsize="navList.length" :aria-posinset="index + 1">
-          <a v-if="navItem.url.startsWith('https')" :href="navItem.url" rel="noopener nofollow" target="_blank">
-            <svg-icon :name="navItem.icon" />
-            {{ navItem.text }}
-            <span class="sr-only">(opens in a new tab)</span>
-          </a>
-          <nuxt-link v-else :to="navItem.url" :aria-current="isCurrent(navItem.url)">
+          <nuxt-link :to="navItem.url" :aria-current="isCurrent(navItem.url)">
             <svg-icon :name="navItem.icon" />
             {{ navItem.text }}
           </nuxt-link>
@@ -19,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator';
+import { Component, Vue } from 'nuxt-property-decorator';
 
 interface INav {
   text: string;
@@ -36,6 +31,11 @@ export default class Navigation extends Vue {
       icon: 'home'
     },
     {
+      text: 'Career',
+      url: '/career',
+      icon: 'briefcase'
+    },
+    {
       text: 'Projects',
       url: '/projects',
       icon: 'code'
@@ -44,11 +44,6 @@ export default class Navigation extends Vue {
       text: 'Blog',
       url: '/blog',
       icon: 'file'
-    },
-    {
-      text: 'Book',
-      url: 'https://levelupyourcareer.today',
-      icon: 'book'
     }
   ];
 
