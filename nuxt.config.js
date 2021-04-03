@@ -31,7 +31,8 @@ export default {
     '@nuxt/typescript-build',
     '@nuxtjs/dotenv',
     '@nuxtjs/google-analytics',
-    '@nuxtjs/prismic'
+    '@nuxtjs/prismic',
+    '@nuxtjs/color-mode'
   ],
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID
@@ -41,6 +42,10 @@ export default {
     apiOptions: {
       accessToken: process.env.PRISMIC_ACCESS_TOKEN
     }
+  },
+  colorMode: {
+    classPrefix: 'theme--',
+    classSuffix: ''
   },
   modules: [
     '@nuxtjs/axios',

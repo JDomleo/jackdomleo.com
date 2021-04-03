@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Debug v-if="env === 'development'" />
     <header>
       <Navigation />
       <div class="jumbo" :class="{'jumbo--home': isHome()}">
@@ -49,6 +50,10 @@ export default class PageTemplate extends Vue {
   private isHome(): boolean {
     console.log(this.$route.path);
     return this.$route.path === '/';
+  }
+
+  private get env(): string {
+    return process.env.NODE_ENV!;
   }
 }
 </script>
