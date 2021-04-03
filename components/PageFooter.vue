@@ -56,7 +56,7 @@ ul {
     }
 
     svg {
-      color: currentColor;
+      color: var(--base-grey-darker);
       height: 2rem;
       width: 2rem;
     }

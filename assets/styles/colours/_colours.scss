@@ -1,6 +1,7 @@
 $base-white: #fff !default;
 $base-black: #000 !default;
-$base-grey: #111 !default;
+$base-grey-darker: #111 !default;
+$base-grey-dark: #292929 !default;
 $base-orange: #fe9867 !default;
 $alt-orange: #ff7f21 !default;
 
@@ -9,7 +10,8 @@ $orange-gradient: linear-gradient(140deg, var(--alt-orange) 0%, var(--base-orang
 :root {
   --base-white: #{$base-white};
   --base-black: #{$base-black};
-  --base-grey: #{$base-grey};
+  --base-grey-darker: #{$base-grey-darker};
+  --base-grey-dark: #{$base-grey-dark};
   --base-orange: #{$base-orange};
   --alt-orange: #{$alt-orange};
 

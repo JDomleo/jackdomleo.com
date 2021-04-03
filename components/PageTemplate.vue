@@ -66,6 +66,7 @@ h1 {
 .jumbo {
   background: var(--base-orange);
   background: var(--orange-gradient);
+  color: var(--base-grey-darker);
   display: grid;
   place-items: center;
   width: 100vw;
