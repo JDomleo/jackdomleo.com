@@ -4,7 +4,7 @@ $base-grey: #111 !default;
 $base-orange: #fe9867 !default;
 $alt-orange: #ff7f21 !default;
 
-$orange-gradient: linear-gradient(140deg, var(--alt-orange) 0%, var(--base-orange) 100%) !default;
+$orange-gradient: linear-gradient(140deg, var(--alt-orange) 0%, var(--base-orange) 60%, var(--base-orange) 100%) !default;
  
 :root {
   --base-white: #{$base-white};

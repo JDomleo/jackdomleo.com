@@ -44,7 +44,7 @@ ul {
 
   a {
     border-radius: 50%;
-    background: var(--orange-gradient);
+    background: var(--base-orange);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: flex;
     padding: 0.5rem;
