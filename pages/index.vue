@@ -6,6 +6,10 @@
         <prismic-image :field="home.data.avatar" loading="lazy" height="180" width="180" />
       </div>
     </div>
+    <section id="about" class="container">
+      <h2>{{ $prismic.asText(home.data.about_heading) }}</h2>
+      <prismic-rich-text :field="home.data.about_text" />
+    </section>
   </PageTemplate>
 </template>
 

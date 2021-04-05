@@ -16,7 +16,7 @@
         </div>
       </div>
     </header>
-    <main>
+    <main class="container--fluid">
       <slot />
     </main>
     <PageFooter :footer="footer" />
@@ -59,6 +59,10 @@ export default class PageTemplate extends Vue {
 </script>
 
 <style lang="scss" scoped>
+header {
+  margin-bottom: 2rem;
+}
+
 h1 {
   font-size: 1.6rem;
   line-height: 1.6;

@@ -33,6 +33,7 @@ footer {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 3rem;
 }
 
 ul {
