@@ -4,39 +4,61 @@
       <label for="contact-name">Name<span aria-hidden="true">*</span> <span class="sr-only">(required)</span></label>
       <span class="textfield__entry">
         <svg-icon name="user" />
-        <input v-model="contactFormData.name" @change="autosave" id="contact-name" name="name" type="text" inputmode="text" autocomplete="name" placeholder="Mickey Mouse" required />
+        <input v-model="contactForm.name" @change="autosave" @input="touch('name')" @blur="touch('name')" id="contact-name" name="name" type="text" inputmode="text" autocomplete="name" placeholder="Mickey Mouse" required />
       </span>
+      <span v-if="$v.contactForm.name.$error" class="textfield__error">This field is required</span>
     </div>
     <div class="textfield">
       <label for="contact-email">Email<span aria-hidden="true">*</span> <span class="sr-only">(required)</span></label>
       <span class="textfield__entry">
         <svg-icon name="email" />
-        <input v-model="contactFormData.email" @change="autosave" id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="mickey.mouse@example.com" required />
+        <input v-model="contactForm.email" @change="autosave" @input="touch('email')" @blur="touch('email')" id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="mickey.mouse@example.com" required />
       </span>
+      <span v-if="$v.contactForm.email.$error" class="textfield__error"><template v-if="!$v.contactForm.email.email">Enter a valid email address</template><template v-else-if="!$v.contactForm.email.required">This field is required</template></span>
     </div>
     <div class="textfield">
       <label for="contact-message">Message<span aria-hidden="true">*</span> <span class="sr-only">(required)</span></label>
       <span class="textfield__entry">
         <svg-icon name="pencil" />
-        <textarea v-model="contactFormData.message" @change="autosave" id="contact-message" name="message" type="text" inputmode="text" placeholder="Jack, I am contacting you on this fine day because..." required />
+        <textarea v-model="contactForm.message" @change="autosave" @input="touch('message')" @blur="touch('message')" id="contact-message" name="message" type="text" inputmode="text" placeholder="Jack, I am contacting you on this fine day because..." required />
       </span>
+      <span v-if="$v.contactForm.message.$error" class="textfield__error">This field is required</span>
     </div>
-    <button class="btn" type="submit">Send</button>
+    <button class="btn" type="submit" :disabled="$v.contactForm.$invalid" :aria-label="$v.contactForm.$invalid ? 'Some required fields are missing' : undefined" data-cooltipz-dir="left">Send</button>
   </form>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
 
-interface IContactFormData {
+import { email, required } from 'vuelidate/lib/validators';
+import { validationMixin } from 'vuelidate';
+
+interface IContactForm {
   email: string;
   name: string;
   message: string;
 }
 
-@Component
+@Component({
+  mixins: [validationMixin],
+  validations: {
+    contactForm: {
+      email: {
+        email,
+        required
+      },
+      name: {
+        required
+      },
+      message: {
+        required
+      }
+    },
+  }
+})
 export default class ContactForm extends Vue {
-  private contactFormData: IContactFormData = {
+  private contactForm: IContactForm = {
     email: '',
     name: '',
     message: ''
@@ -46,12 +68,16 @@ export default class ContactForm extends Vue {
     const data = sessionStorage.getItem("autosave");
 
     if (data) {
-      this.contactFormData = JSON.parse(data);
+      this.contactForm = JSON.parse(data);
     }
   }
 
   private autosave(): void {
-    sessionStorage.setItem("autosave", JSON.stringify(this.contactFormData));
+    sessionStorage.setItem("autosave", JSON.stringify(this.contactForm));
+  }
+
+  private touch(formField: string): void {
+    return this.$v.contactForm[formField]!.$touch();
   }
 }
 </script>
@@ -88,6 +114,7 @@ export default class ContactForm extends Vue {
 
     span[aria-hidden="true"] {
       color: var(--alt-orange);
+      user-select: none;
     }
   }
 
