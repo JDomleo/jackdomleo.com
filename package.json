@@ -29,23 +29,25 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/svg-sprite": "^0.5.2",
     "cooltipz-css": "^1.6.7",
-    "core-js": "^3.9.1",
+    "core-js": "^3.10.1",
     "modern-normalize": "^1.0.0",
-    "nuxt": "^2.15.3",
-    "particles.vue": "^2.7.2",
-    "tsparticles": "^1.24.2"
+    "nuxt": "^2.15.4",
+    "particles.vue": "^2.9.2",
+    "tsparticles": "^1.26.2",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
-    "@nuxt/image": "^0.4.1",
-    "@nuxt/types": "^2.15.3",
+    "@nuxt/image": "^0.4.4",
+    "@nuxt/types": "^2.15.4",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/color-mode": "^2.0.5",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/google-analytics": "^2.4.0",
-    "@vue/test-utils": "^1.1.3",
+    "@types/vuelidate": "^0.7.14",
+    "@vue/test-utils": "^1.1.4",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^26.6.3",
-    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-prettier": "^8.2.0",
     "eslint-plugin-prettier": "^3.3.1",
     "fibers": "^5.0.0",
     "jest": "^26.6.3",
@@ -54,7 +56,8 @@
     "push-dir": "^0.4.1",
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
-    "ts-jest": "^26.5.3",
-    "vue-jest": "^3.0.7"
+    "ts-jest": "^26.5.4",
+    "vue-jest": "^3.0.7",
+    "vuelidate-property-decorators": "^1.0.28"
   }
 }

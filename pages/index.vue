@@ -10,6 +10,10 @@
       <h2>{{ $prismic.asText(home.data.about_heading) }}</h2>
       <prismic-rich-text :field="home.data.about_text" />
     </section>
+    <section id="contact" class="container">
+      <h2>Contact me</h2>
+      <ContactForm />
+    </section>
   </PageTemplate>
 </template>
 
@@ -55,6 +59,19 @@ export default class Index extends Vue {
 
   &__subtext {
     text-align: center;
+  }
+}
+
+section {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
   }
 }
 </style>
