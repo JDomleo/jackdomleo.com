@@ -1,7 +1,7 @@
 <template>
   <form class="contact" method="POST" name="contact" data-netlify="true">
     <div>
-      <input type="hidden" name="contact" value="contact" />
+      <input type="hidden" name="form-name" value="contact" />
       <div class="textfield">
         <label for="contact-name">Name<span aria-hidden="true">*</span> <span class="sr-only">(required)</span></label>
         <span class="textfield__entry">
