@@ -1,5 +1,5 @@
 <template>
-  <form class="contact" method="POST" name="contact" netlify>
+  <form class="contact" method="POST" name="contact" data-netlify="true">
     <div>
       <div class="textfield">
         <label for="contact-name">Name<span aria-hidden="true">*</span> <span class="sr-only">(required)</span></label>
