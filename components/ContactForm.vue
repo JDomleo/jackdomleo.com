@@ -1,7 +1,11 @@
 <template>
-  <form class="contact" method="POST" name="contact" data-netlify="true">
+  <form class="contact" method="POST" name="contact" data-netlify="true" netlify-honeypot="bot-field">
     <div>
       <input type="hidden" name="form-name" value="contact" />
+      <div style="display: none">
+        <label for="bot-field">Do not fill out this field if you are human!</label>
+        <input id="bot-field" name="bot-field" />
+      </div>
       <div class="textfield">
         <label for="contact-name">Name<span aria-hidden="true">*</span> <span class="sr-only">(required)</span></label>
         <span class="textfield__entry">
