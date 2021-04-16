@@ -16,7 +16,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate --fail-on-error",
+    "generate": "nuxt generate -m --fail-on-error",
     "test": "jest"
   },
   "dependencies": {
