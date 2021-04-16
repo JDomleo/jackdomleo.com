@@ -1,15 +1,16 @@
-$base-white: #fff !default;
-$base-black: #000 !default;
-$base-grey-darker: #111 !default;
-$base-grey-dark: #393939 !default;
-$base-grey-middle: #666 !default;
-$base-grey-light: #aaa !default;
-$base-grey-lighter: #ccc !default;
-$base-red: #81171b !default;
-$base-orange: #fe9867 !default;
-$alt-orange: #ff7f21 !default;
+// Colours shared across themes
 
-$orange-gradient: linear-gradient(140deg, var(--alt-orange) 0%, var(--base-orange) 60%, var(--base-orange) 100%) !default;
+$base-white: #fff;
+$base-black: #000;
+$base-grey-darker: #111;
+$base-grey-dark: #393939;
+$base-grey-middle: #666;
+$base-grey-light: #aaa;
+$base-grey-lighter: #ccc;
+$base-orange: #fe9867;
+$alt-orange: #ff7f21;
+
+$orange-gradient: linear-gradient(140deg, var(--alt-orange) 0%, var(--base-orange) 60%, var(--base-orange) 100%);
  
 :root {
   --base-white: #{$base-white};
@@ -19,7 +20,6 @@ $orange-gradient: linear-gradient(140deg, var(--alt-orange) 0%, var(--base-orang
   --base-grey-middle: #{$base-grey-middle};
   --base-grey-light: #{$base-grey-light};
   --base-grey-lighter: #{$base-grey-lighter};
-  --base-red: #{$base-red};
   --base-orange: #{$base-orange};
   --alt-orange: #{$alt-orange};
 
