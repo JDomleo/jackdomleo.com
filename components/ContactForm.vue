@@ -1,6 +1,6 @@
 <template>
-  <form class="contact" method="POST" name="contact" data-netlify="true" netlify-honeypot="bot-field">
-    <div>
+  <form method="POST" name="contact" data-netlify="true" netlify-honeypot="bot-field">
+    <div class="contact">
       <input type="hidden" name="form-name" value="contact" />
       <div style="display: none">
         <label for="bot-field">Do not fill out this field if you are human!</label>
@@ -10,27 +10,27 @@
         <label for="contact-name">Name<span aria-hidden="true">*</span> <span class="sr-only">(required)</span></label>
         <span class="textfield__entry">
           <svg-icon name="user" />
-          <input v-model="contactForm.name" @change="autosave" @input="touch('name')" @blur="touch('name')" id="contact-name" name="name" type="text" inputmode="text" autocomplete="name" placeholder="Mickey Mouse" required />
+          <input v-model="contactForm.name" @change="autosave" @input="touch('name')" @blur="touch('name')" id="contact-name" name="name" type="text" inputmode="text" autocomplete="name" placeholder="Mickey Mouse" required :aria-invalid="$v.contactForm.name.$invalid.toString()" />
         </span>
-        <span v-if="$v.contactForm.name.$error" class="textfield__error">This field is required</span>
+        <span v-if="$v.contactForm.name.$error" class="textfield__error" role="alert">This field is required</span>
       </div>
       <div class="textfield">
         <label for="contact-email">Email<span aria-hidden="true">*</span> <span class="sr-only">(required)</span></label>
         <span class="textfield__entry">
           <svg-icon name="email" />
-          <input v-model="contactForm.email" @change="autosave" @input="touch('email')" @blur="touch('email')" id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="mickey.mouse@example.com" required />
+          <input v-model="contactForm.email" @change="autosave" @input="touch('email')" @blur="touch('email')" id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="mickey.mouse@example.com" required :aria-invalid="$v.contactForm.email.$invalid.toString()" />
         </span>
-        <span v-if="$v.contactForm.email.$error" class="textfield__error"><template v-if="!$v.contactForm.email.email">Enter a valid email address</template><template v-else-if="!$v.contactForm.email.required">This field is required</template></span>
+        <span v-if="$v.contactForm.email.$error" class="textfield__error" role="alert"><template v-if="!$v.contactForm.email.email">Enter a valid email address</template><template v-else-if="!$v.contactForm.email.required">This field is required</template></span>
       </div>
       <div class="textfield">
         <label for="contact-message">Message<span aria-hidden="true">*</span> <span class="sr-only">(required)</span></label>
         <span class="textfield__entry">
           <svg-icon name="pencil" />
-          <textarea v-model="contactForm.message" @change="autosave" @input="touch('message')" @blur="touch('message')" id="contact-message" name="message" type="text" inputmode="text" placeholder="Jack, I am contacting you on this fine day because..." required />
+          <textarea v-model="contactForm.message" @change="autosave" @input="touch('message')" @blur="touch('message')" id="contact-message" name="message" type="text" inputmode="text" placeholder="Jack, I am contacting you on this fine day because..." required :aria-invalid="$v.contactForm.message.$invalid.toString()" />
         </span>
-        <span v-if="$v.contactForm.message.$error" class="textfield__error">This field is required</span>
+        <span v-if="$v.contactForm.message.$error" class="textfield__error" role="alert">This field is required</span>
       </div>
-      <button class="btn" type="submit" :disabled="$v.contactForm.$invalid" :aria-label="$v.contactForm.$invalid ? 'Some required fields are missing' : undefined" data-cooltipz-dir="left">Send</button>
+      <button class="btn" type="submit" :disabled="$v.contactForm.$invalid" :aria-label="$v.contactForm.$invalid ? 'Some required fields are missing' : undefined" :data-cooltipz-dir="$v.contactForm.$invalid ? 'left' : undefined">Send</button>
     </div>
   </form>
 </template>
@@ -42,8 +42,8 @@ import { email, required } from 'vuelidate/lib/validators';
 import { validationMixin } from 'vuelidate';
 
 interface IContactForm {
-  email: string;
   name: string;
+  email: string;
   message: string;
 }
 
@@ -51,11 +51,11 @@ interface IContactForm {
   mixins: [validationMixin],
   validations: {
     contactForm: {
-      email: {
-        email,
+      name: {
         required
       },
-      name: {
+      email: {
+        email,
         required
       },
       message: {
@@ -66,8 +66,8 @@ interface IContactForm {
 })
 export default class ContactForm extends Vue {
   private contactForm: IContactForm = {
-    email: '',
     name: '',
+    email: '',
     message: ''
   };
 
