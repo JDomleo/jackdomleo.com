@@ -10,25 +10,25 @@
         <label for="contact-name">Name<span aria-hidden="true">*</span> <span class="sr-only">(required)</span></label>
         <span class="textfield__entry">
           <svg-icon name="user" />
-          <input v-model="contactForm.name" @change="autosave" @input="touch('name')" @blur="touch('name')" id="contact-name" name="name" type="text" inputmode="text" autocomplete="name" placeholder="Mickey Mouse" required :aria-invalid="$v.contactForm.name.$invalid.toString()" />
+          <input v-model="contactForm.name" @change="autosave" @input="touch('name')" @blur="touch('name')" id="contact-name" name="name" type="text" inputmode="text" autocomplete="name" placeholder="Mickey Mouse" required :aria-invalid="$v.contactForm.name.$dirty && $v.contactForm.name.$invalid.toString()" :aria-describedby="$v.contactForm.name.$dirty && $v.contactForm.name.$invalid && 'contact-name--error'" />
         </span>
-        <span v-if="$v.contactForm.name.$error" class="textfield__error" role="alert">This field is required</span>
+        <span v-if="$v.contactForm.name.$error" id="contact-name--error" class="textfield__error" role="alert">This field is required</span>
       </div>
       <div class="textfield">
         <label for="contact-email">Email<span aria-hidden="true">*</span> <span class="sr-only">(required)</span></label>
         <span class="textfield__entry">
           <svg-icon name="email" />
-          <input v-model="contactForm.email" @change="autosave" @input="touch('email')" @blur="touch('email')" id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="mickey.mouse@example.com" required :aria-invalid="$v.contactForm.email.$invalid.toString()" />
+          <input v-model="contactForm.email" @change="autosave" @input="touch('email')" @blur="touch('email')" id="contact-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="mickey.mouse@example.com" required :aria-invalid="$v.contactForm.email.$dirty && $v.contactForm.email.$invalid.toString()" :aria-describedby="$v.contactForm.email.$dirty && $v.contactForm.email.$invalid && 'contact-email--error'" />
         </span>
-        <span v-if="$v.contactForm.email.$error" class="textfield__error" role="alert"><template v-if="!$v.contactForm.email.email">Enter a valid email address</template><template v-else-if="!$v.contactForm.email.required">This field is required</template></span>
+        <span v-if="$v.contactForm.email.$error" id="contact-email--error" class="textfield__error" role="alert"><template v-if="!$v.contactForm.email.email">Enter a valid email address</template><template v-else-if="!$v.contactForm.email.required">This field is required</template></span>
       </div>
       <div class="textfield">
         <label for="contact-message">Message<span aria-hidden="true">*</span> <span class="sr-only">(required)</span></label>
         <span class="textfield__entry">
           <svg-icon name="pencil" />
-          <textarea v-model="contactForm.message" @change="autosave" @input="touch('message')" @blur="touch('message')" id="contact-message" name="message" type="text" inputmode="text" placeholder="Jack, I am contacting you on this fine day because..." required :aria-invalid="$v.contactForm.message.$invalid.toString()" />
+          <textarea v-model="contactForm.message" @change="autosave" @input="touch('message')" @blur="touch('message')" id="contact-message" name="message" type="text" inputmode="text" placeholder="Jack, I am contacting you on this fine day because..." required :aria-invalid="$v.contactForm.message.$dirty && $v.contactForm.message.$invalid.toString()" :aria-describedby="$v.contactForm.message.$dirty && $v.contactForm.message.$invalid && 'contact-message--error'" />
         </span>
-        <span v-if="$v.contactForm.message.$error" class="textfield__error" role="alert">This field is required</span>
+        <span v-if="$v.contactForm.message.$error" id="contact-message--error" class="textfield__error" role="alert">This field is required</span>
       </div>
       <button class="btn" type="submit" :disabled="$v.contactForm.$invalid" :aria-label="$v.contactForm.$invalid ? 'Some required fields are missing' : undefined" :data-cooltipz-dir="$v.contactForm.$invalid ? 'left' : undefined">Send</button>
     </div>
