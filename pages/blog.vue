@@ -1,20 +1,19 @@
 <template>
-  <PageTemplate page-heading="Blog" :footer="footer">
-  </PageTemplate>
+  <PageTemplate page-heading="Blog" :footer="footer" />
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator';
+import { Vue, Component } from 'nuxt-property-decorator'
 
 @Component({
   head () {
     return {
       title: 'Blog'
-    };
+    }
   }
 })
 export default class Blog extends Vue {
-  async asyncData({ $prismic, error }: any) {
+  async asyncData ({ $prismic, error }: any) {
     const footer = await $prismic.api.getSingle('footer')
 
     if (footer) {

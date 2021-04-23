@@ -18,17 +18,17 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
+import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component({
   head () {
     return {
       title: 'Home'
-    };
+    }
   }
 })
 export default class Index extends Vue {
-  private async asyncData({ $prismic, error }: any) {
+  private async asyncData ({ $prismic, error }: any) {
     const home = await $prismic.api.getSingle('home')
     const footer = await $prismic.api.getSingle('footer')
 

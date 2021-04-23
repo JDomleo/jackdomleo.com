@@ -1,11 +1,11 @@
 export default function (doc) {
   if (doc.isBroken) {
-    return '/not-found';
+    return '/not-found'
   }
 
   if (doc.type === 'home') {
-    return '/';
+    return '/'
   }
 
-  return '/not-found';
+  return '/not-found'
 };

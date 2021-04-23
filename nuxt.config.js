@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()
 
 export default {
   target: 'static',
@@ -29,6 +29,8 @@ export default {
   components: true,
   buildModules: [
     '@nuxt/typescript-build',
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/stylelint-module',
     '@nuxtjs/dotenv',
     '@nuxtjs/google-analytics',
     '@nuxtjs/prismic',

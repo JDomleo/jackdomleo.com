@@ -7,12 +7,16 @@
         </a>
       </li>
     </ul>
-    <p>&copy;<time :datetime="year">{{ year }}</time> Jack Domleo. All rights reserved.</p>
+    <p>
+      &copy;<time :datetime="year">
+        {{ year }}
+      </time> Jack Domleo. All rights reserved.
+    </p>
   </footer>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'nuxt-property-decorator';
+import { Component, Prop, Vue } from 'nuxt-property-decorator'
 
 @Component
 export default class PageFooter extends Vue {
@@ -22,8 +26,8 @@ export default class PageFooter extends Vue {
   })
   private readonly footer!: any;
 
-  private get year(): number {
-    return new Date().getFullYear();
+  private get year (): number {
+    return new Date().getFullYear()
   }
 }
 </script>

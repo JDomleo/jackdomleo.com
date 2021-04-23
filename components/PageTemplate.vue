@@ -4,14 +4,16 @@
     <header>
       <Navigation />
       <div class="jumbo" :class="{'jumbo--home': isHome()}">
-        <div id="particles"></div>
+        <div id="particles" />
         <div>
-          <h1 class="jumbo__heading">{{ pageHeading }}</h1>
+          <h1 class="jumbo__heading">
+            {{ pageHeading }}
+          </h1>
           <slot name="jumbo" />
         </div>
         <div class="wave">
           <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="wave__fill"></path>
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="wave__fill" />
           </svg>
         </div>
       </div>
@@ -24,8 +26,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'nuxt-property-decorator';
-import { tsParticles } from "tsparticles";
+import { Component, Prop, Vue } from 'nuxt-property-decorator'
+import { tsParticles } from 'tsparticles'
 
 @Component
 export default class PageTemplate extends Vue {
@@ -41,19 +43,18 @@ export default class PageTemplate extends Vue {
   })
   private readonly pageHeading!: string;
 
-  private mounted(): void {
+  private mounted (): void {
     if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-      tsParticles.load("particles", require('../assets/particles/triangles.json'));
+      tsParticles.load('particles', require('../assets/particles/triangles.json'))
     }
   }
 
-  private isHome(): boolean {
-    console.log(this.$route.path);
-    return this.$route.path === '/';
+  private isHome (): boolean {
+    return this.$route.path === '/'
   }
 
-  private get env(): string {
-    return process.env.NODE_ENV!;
+  private get env (): string {
+    return process.env.NODE_ENV!
   }
 }
 </script>
@@ -82,7 +83,7 @@ h1 {
   height: 40vh;
   position: relative;
   padding: 1rem;
-  
+
   @media (min-width: 26em) {
     padding-top: 3rem;
   }

@@ -1,16 +1,24 @@
 <template>
   <div class="debug">
-    <label for="theme">Theme</label>
+    <label for="theme">
+      Theme
+    </label>
     <select id="theme" v-model="$colorMode.preference">
-      <option value="system">System</option>
-      <option value="light">Light</option>
-      <option value="dark">Dark</option>
+      <option value="system">
+        System
+      </option>
+      <option value="light">
+        Light
+      </option>
+      <option value="dark">
+        Dark
+      </option>
     </select>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
+import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component
 export default class Debug extends Vue {}

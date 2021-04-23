@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
+import { Component, Vue } from 'nuxt-property-decorator'
 
 interface INav {
   text: string;
@@ -48,7 +48,7 @@ export default class Navigation extends Vue {
   ];
 
   private isCurrent (path: string): 'page' | undefined {
-    return this.$route.path === path ? 'page' : undefined;
+    return this.$route.path === path ? 'page' : undefined
   }
 }
 </script>

@@ -1,20 +1,19 @@
 <template>
-  <PageTemplate page-heading="Career" :footer="footer">
-  </PageTemplate>
+  <PageTemplate page-heading="Career" :footer="footer" />
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator';
+import { Component, Vue } from 'nuxt-property-decorator'
 
 @Component({
   head () {
     return {
       title: 'Career'
-    };
+    }
   }
 })
 export default class Career extends Vue {
-  async asyncData({ $prismic, error }: any) {
+  async asyncData ({ $prismic, error }: any) {
     const footer = await $prismic.api.getSingle('footer')
 
     if (footer) {
