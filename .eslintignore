@@ -1,3 +1,6 @@
 static/sw.js
 .gitignore
 prismic.d.ts
+coverage
+results
+.nuxt
