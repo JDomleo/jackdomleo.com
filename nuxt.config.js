@@ -22,9 +22,8 @@ export default {
     'node_modules/cooltipz-css/src/cooltipz',
     '@/assets/styles/main.scss'
   ],
-
-  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    "@/plugins/reflect-metadata"
   ],
   components: true,
   buildModules: [
