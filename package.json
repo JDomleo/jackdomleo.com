@@ -55,8 +55,8 @@
     "@vue/test-utils": "^1.1.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^26.6.3",
-    "eslint": "^7.24.0",
-    "eslint-config-prettier": "^8.2.0",
+    "eslint": "^7.25.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jest": "^24.3.5",
     "eslint-plugin-nuxt": "^2.0.0",
     "fibers": "^5.0.0",
@@ -66,7 +66,7 @@
     "open-cli": "^6.0.1",
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
-    "stylelint": "^13.12.0",
+    "stylelint": "^13.13.0",
     "ts-jest": "^26.5.5",
     "vue-jest": "^3.0.7"
   }
