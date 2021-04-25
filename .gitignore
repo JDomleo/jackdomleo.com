@@ -88,3 +88,6 @@ sw.*
 
 # Environment variables
 .env
+
+#Jest stats
+results

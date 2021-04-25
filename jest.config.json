@@ -24,5 +24,18 @@
     "<rootDir>/layouts/**/*.{js,ts,vue}",
     "<rootDir>/middleware/**/*.{js,ts,vue}",
     "<rootDir>/pages/**/*.{js,ts,vue}"
+  ],
+  "reporters": [
+    "default",
+    [
+      "jest-stare",
+      {
+        "resultDir": "results/jest-stare",
+        "reportTitle": "jackdomleo.dev unit tests report",
+        "coverageLink": "../../coverage/lcov-report/index.html",
+        "jestStareConfigJson": "jest-stare.json",
+        "jestGlobalConfigJson": "globalStuff.json"
+      }
+    ]
   ]
 }
