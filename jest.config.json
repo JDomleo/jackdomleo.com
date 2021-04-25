@@ -15,6 +15,9 @@
     "^.+\\.js$": "babel-jest",
     ".*\\.(vue)$": "vue-jest"
   },
+  "setupFiles": [
+    "./tests/unit/setup-jest.ts"
+  ],
   "snapshotSerializers": [
     "jest-serializer-vue"
   ],
