@@ -89,5 +89,5 @@ sw.*
 # Environment variables
 .env
 
-#Jest stats
-results
+# Jest report
+report

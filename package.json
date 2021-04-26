@@ -20,7 +20,7 @@
     "lint:fix": "eslint --ext .ts,.js,.vue --fix --ignore-path .eslintignore .",
     "test:unit": "jest",
     "test:unit:update-snapshots": "jest --updateSnapshot",
-    "test:unit:report": "open-cli results/jest-stare/index.html"
+    "test:unit:report": "open-cli report/index.html"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",

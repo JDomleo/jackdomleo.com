@@ -22,6 +22,7 @@
     "jest-serializer-vue"
   ],
   "collectCoverage": true,
+  "coverageDirectory": "report/coverage",
   "collectCoverageFrom": [
     "<rootDir>/components/**/*.{js,ts,vue}",
     "<rootDir>/layouts/**/*.{js,ts,vue}",
@@ -33,9 +34,9 @@
     [
       "jest-stare",
       {
-        "resultDir": "results/jest-stare",
+        "resultDir": "report",
         "reportTitle": "jackdomleo.dev unit tests report",
-        "coverageLink": "../../coverage/lcov-report/index.html",
+        "coverageLink": "./coverage/lcov-report/index.html",
         "jestStareConfigJson": "jest-stare.json",
         "jestGlobalConfigJson": "globalStuff.json"
       }
