@@ -13,7 +13,7 @@
   },
   "homepage": "https://jackdomleo.dev",
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt --open",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate -m --fail-on-error",
