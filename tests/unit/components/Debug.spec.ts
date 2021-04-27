@@ -60,7 +60,7 @@ describe('Debug.vue component', () => {
    * A11y
    */
 
-   it('to have no obvious accessibility violations', async () => {
+  it('to have no obvious accessibility violations', async () => {
     const wrapper = mount(Debug, {
       mocks: {
         $colorMode: {

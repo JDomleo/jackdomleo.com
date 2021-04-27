@@ -23,7 +23,7 @@ export default {
     '@/assets/styles/main.scss'
   ],
   plugins: [
-    "@/plugins/reflect-metadata"
+    '@/plugins/reflect-metadata'
   ],
   components: true,
   buildModules: [
