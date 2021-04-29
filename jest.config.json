@@ -25,6 +25,7 @@
   "coverageDirectory": "report/coverage",
   "collectCoverageFrom": [
     "<rootDir>/components/**/*.{js,ts,vue}",
+    "<rootDir>/helpers/**/*.{js,ts,vue}",
     "<rootDir>/layouts/**/*.{js,ts,vue}",
     "<rootDir>/middleware/**/*.{js,ts,vue}",
     "<rootDir>/pages/**/*.{js,ts,vue}"
