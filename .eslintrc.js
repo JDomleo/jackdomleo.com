@@ -22,6 +22,7 @@ module.exports = {
       ignores: ['pre', 'textarea', 'nuxt-link']
     }],
     'jest/lowercase-name': 'off',
-    'jest/prefer-expect-assertions': 'off'
+    'jest/prefer-expect-assertions': 'off',
+    'jest/prefer-called-with': 'off'
   }
 }

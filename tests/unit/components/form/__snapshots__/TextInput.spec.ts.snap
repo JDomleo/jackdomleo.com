@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput.vue component matches snapshot when mounted 1`] = `
+<div
+  class="text-input"
+>
+  <label
+    for="test-input"
+  >
+    
+    Label
+    
+    <!---->
+  </label>
+   
+  <span
+    class="text-input__entry"
+  >
+    <!---->
+     
+    <input
+      aria-invalid="false"
+      id="test-input"
+      type="text"
+    />
+  </span>
+   
+  <!---->
+</div>
+`;
+
+exports[`TextInput.vue component matches snapshot when shallow mounted 1`] = `
+<div
+  class="text-input"
+>
+  <label
+    for="test-input"
+  >
+    
+    Label
+    
+    <!---->
+  </label>
+   
+  <span
+    class="text-input__entry"
+  >
+    <!---->
+     
+    <input
+      aria-invalid="false"
+      id="test-input"
+      type="text"
+    />
+  </span>
+   
+  <!---->
+</div>
+`;
