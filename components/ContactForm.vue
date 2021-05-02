@@ -45,7 +45,6 @@
         label="Message"
         for-id="contact-message"
         placeholder="Greetings Jack! I hope you are doing swell..."
-        autocomplete="message"
         name="message"
         type="text"
         inputmode="text"

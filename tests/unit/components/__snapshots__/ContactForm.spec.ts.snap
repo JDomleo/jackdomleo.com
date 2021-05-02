@@ -1,0 +1,279 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactForm.vue component matches snapshot when mounted 1`] = `
+<form
+  data-netlify="true"
+  method="POST"
+  name="contact"
+  netlify-honeypot="bot-field"
+>
+  <div
+    class="contact"
+  >
+    <input
+      name="form-name"
+      type="hidden"
+      value="contact"
+    />
+     
+    <div
+      style="display: none;"
+    >
+      <label
+        for="bot-field"
+      >
+        
+        Do not fill out this field if you are human!
+      
+      </label>
+       
+      <input
+        id="bot-field"
+        name="bot-field"
+      />
+    </div>
+     
+    <div
+      class="text-input"
+    >
+      <label
+        for="contact-name"
+      >
+        
+    Name
+    
+        <span
+          aria-hidden="true"
+        >
+          
+        *
+      
+        </span>
+         
+        <span
+          class="sr-only"
+        >
+          
+        (required)
+      
+        </span>
+      </label>
+       
+      <span
+        class="text-input__entry"
+      >
+        <svg-icon-stub
+          name="user"
+        />
+         
+        <input
+          aria-invalid="false"
+          autocomplete="name"
+          id="contact-name"
+          inputmode="text"
+          name="name"
+          placeholder="Mickey Mouse"
+          required="required"
+          type="text"
+        />
+      </span>
+       
+      <!---->
+    </div>
+     
+    <div
+      class="text-input"
+    >
+      <label
+        for="contact-email"
+      >
+        
+    Email
+    
+        <span
+          aria-hidden="true"
+        >
+          
+        *
+      
+        </span>
+         
+        <span
+          class="sr-only"
+        >
+          
+        (required)
+      
+        </span>
+      </label>
+       
+      <span
+        class="text-input__entry"
+      >
+        <svg-icon-stub
+          name="email"
+        />
+         
+        <input
+          aria-invalid="false"
+          autocomplete="email"
+          id="contact-email"
+          inputmode="email"
+          name="email"
+          placeholder="mickey.mouse@example.com"
+          required="required"
+          type="email"
+        />
+      </span>
+       
+      <!---->
+    </div>
+     
+    <div
+      class="text-input"
+    >
+      <label
+        for="contact-message"
+      >
+        
+    Message
+    
+        <span
+          aria-hidden="true"
+        >
+          
+        *
+      
+        </span>
+         
+        <span
+          class="sr-only"
+        >
+          
+        (required)
+      
+        </span>
+      </label>
+       
+      <span
+        class="text-input__entry"
+      >
+        <svg-icon-stub
+          name="pencil"
+        />
+         
+        <textarea
+          aria-invalid="false"
+          id="contact-message"
+          inputmode="text"
+          name="message"
+          placeholder="Greetings Jack! I hope you are doing swell..."
+          required="required"
+          type="text"
+        />
+      </span>
+       
+      <!---->
+    </div>
+     
+    <button
+      aria-label="Some required fields are missing"
+      class="btn"
+      data-cooltipz-dir="left"
+      disabled="disabled"
+      type="submit"
+    >
+      
+      Send
+    
+    </button>
+  </div>
+</form>
+`;
+
+exports[`ContactForm.vue component matches snapshot when shallow mounted 1`] = `
+<form
+  data-netlify="true"
+  method="POST"
+  name="contact"
+  netlify-honeypot="bot-field"
+>
+  <div
+    class="contact"
+  >
+    <input
+      name="form-name"
+      type="hidden"
+      value="contact"
+    />
+     
+    <div
+      style="display: none;"
+    >
+      <label
+        for="bot-field"
+      >
+        
+        Do not fill out this field if you are human!
+      
+      </label>
+       
+      <input
+        id="bot-field"
+        name="bot-field"
+      />
+    </div>
+     
+    <formtextinput-stub
+      autocomplete="name"
+      forid="contact-name"
+      icon="user"
+      inputmode="text"
+      label="Name"
+      name="name"
+      placeholder="Mickey Mouse"
+      required="true"
+      type="text"
+      value=""
+    />
+     
+    <formtextinput-stub
+      autocomplete="email"
+      forid="contact-email"
+      icon="email"
+      inputmode="email"
+      label="Email"
+      name="email"
+      placeholder="mickey.mouse@example.com"
+      required="true"
+      type="email"
+      value=""
+    />
+     
+    <formtextinput-stub
+      forid="contact-message"
+      icon="pencil"
+      inputmode="text"
+      label="Message"
+      multiline="true"
+      name="message"
+      placeholder="Greetings Jack! I hope you are doing swell..."
+      required="true"
+      type="text"
+      value=""
+    />
+     
+    <button
+      aria-label="Some required fields are missing"
+      class="btn"
+      data-cooltipz-dir="left"
+      disabled="disabled"
+      type="submit"
+    >
+      
+      Send
+    
+    </button>
+  </div>
+</form>
+`;
