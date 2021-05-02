@@ -32,7 +32,7 @@
     "@nuxtjs/svg-sprite": "^0.5.2",
     "cooltipz-css": "^1.6.7",
     "core-js": "^3.11.1",
-    "modern-normalize": "^1.0.0",
+    "modern-normalize": "^1.1.0",
     "nuxt": "^2.15.4",
     "particles.vue": "^2.9.2",
     "reflect-metadata": "^0.1.13",
@@ -54,7 +54,7 @@
     "@types/vuelidate": "^0.7.14",
     "@typescript-eslint/parser": "^4.22.0",
     "@vue/cli-plugin-unit-jest": "^4.5.12",
-    "@vue/test-utils": "^1.1.4",
+    "@vue/test-utils": "^1.2.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^26.6.3",
     "eslint": "^7.25.0",
@@ -69,7 +69,7 @@
     "open-cli": "^6.0.1",
     "sass": "^1.32.12",
     "sass-loader": "^10.1.1",
-    "stylelint": "^13.13.0",
+    "stylelint": "^13.13.1",
     "ts-jest": "^26.5.5",
     "vue-jest": "^3.0.7"
   }
