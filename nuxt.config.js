@@ -15,8 +15,6 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
-  // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     'modern-normalize/modern-normalize.css',
     'node_modules/cooltipz-css/src/cooltipz',
@@ -68,11 +66,21 @@ export default {
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
-
-  // Content module configuration (https://go.nuxtjs.dev/config-content)
-  content: {},
+  content: {
+    apiPrefix: '_blog',
+    dir: 'blog',
+    liveEdit: false
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+  },
+  generate: {
+    async routes () {
+      const { $content } = require('@nuxt/content')
+      const files = await $content({ deep: true }).only(['path']).fetch()
+
+      return files.map(file => file.path)
+    }
   }
 }
